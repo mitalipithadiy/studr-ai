@@ -1,4 +1,4 @@
-import * as build from './build/index.js';// Import default export from index.js
-import { createRequestHandler } from '@remix-run/vercel';
+const { createRequestHandler } = require("@remix-run/vercel");
+const build = require("./build");
 
-export default createRequestHandler({ build });
+module.exports = createRequestHandler({ build, mode: process.env.NODE_ENV });
